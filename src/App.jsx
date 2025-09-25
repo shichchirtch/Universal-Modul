@@ -71,7 +71,29 @@ function App() {
                   closeModal={closeModal}
                   alertModal={alertModal}
                   openModal={openModal}
-           />
+           >
+               <Modal
+                setIsModalOpen={setIsModalOpen}
+                      closeModal={closeModal}
+                      alertModal={alertModal}
+                      content='Are you sure you want to proceed? This action cannot be undone.'
+                      title='Confirm Your Action'
+                      showButton
+               >
+                   <Button handleClick={closeModal}  variant={'closeButton'}  >
+                       &times;
+                   </Button>
+
+                   <Button handleClick={closeModal}  variant={'secondaryButton'}  >
+                       Cancel
+                   </Button>
+
+                   <Button handleClick={alertModal}  variant={'primaryButton'}  >
+                       Yes, Continue
+                   </Button>
+
+               </Modal>
+           </Main>
     </div>
   );
 }
